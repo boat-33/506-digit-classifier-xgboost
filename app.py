@@ -22,7 +22,7 @@ filename = open('model_outputs/scaler.pkl', 'rb')
 scaler = pickle.load(filename)
 filename.close()
 
-filename = open('model_outputs/rf_model.pkl', 'rb')
+filename = open('analysis/optimization/xgb_grid_model.pkl', 'rb')
 rf_model = pickle.load(filename)
 filename.close()
 
@@ -35,7 +35,7 @@ filename.close()
 ########### define variables
 tabtitle='digits classifier'
 sourceurl = 'https://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html'
-githublink = 'https://github.com/plotly-dash-apps/506-digit-classifier-xgboost'
+githublink = 'https://github.com/boat-33/506-digit-classifier-xgboost'
 canvas_size = 200
 
 ########### BLANK FIGURE
@@ -149,7 +149,7 @@ app.layout = html.Div(children=[
             html.Div([
                 html.H3('Predicted Digit'),
                 html.Br(),
-                html.H4('Random Forest Model:'),
+                html.H4('XGBoost Grid Model:'),
                 html.H6(id='rf-prediction', children='...'),
                 html.H6(id='rf-probability', children='waiting for inputs'),
                 html.Br(),
